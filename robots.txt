@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://steps-to-the-stars.co.uk/sitemap.xml
