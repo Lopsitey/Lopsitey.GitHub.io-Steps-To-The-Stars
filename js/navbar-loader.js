@@ -14,6 +14,10 @@
       link.setAttribute("href", rooted(link.dataset.href));
     });
 
+    scope.querySelectorAll("[data-src]").forEach((image) => {
+      image.setAttribute("src", rooted(image.dataset.src));
+    });
+
     scope.querySelectorAll("[data-social-url]").forEach((link) => {
       const url = (link.dataset.socialUrl || "").trim();
       if (!url) {
