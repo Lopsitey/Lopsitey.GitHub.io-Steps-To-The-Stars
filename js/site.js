@@ -11,6 +11,9 @@
     toggle.addEventListener("click", () => {
       const isOpen = header.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", String(isOpen));
+      if (!isOpen) {
+        toggle.blur();
+      }
     });
 
     panel.querySelectorAll("a").forEach((link) => {
