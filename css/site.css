@@ -22,6 +22,7 @@
 }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
   scroll-padding-top: 32px;
 }
@@ -30,9 +31,10 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 20px 30px, rgba(246, 248, 255, 0.35) 0 1px, transparent 1.4px) 0 0 / 120px 140px,
-    radial-gradient(circle at 70px 90px, rgba(245, 200, 76, 0.28) 0 1px, transparent 1.5px) 0 0 / 180px 170px,
-    linear-gradient(150deg, #070B1A 0%, #101032 48%, #070B1A 100%);
+    radial-gradient(circle at 24px 28px, rgba(246, 248, 255, 0.5) 0 1px, transparent 1.4px) 0 0 / 180px 150px,
+    radial-gradient(circle at 82px 102px, rgba(245, 200, 76, 0.38) 0 1px, transparent 1.5px) 0 0 / 270px 240px,
+    radial-gradient(circle at 132px 74px, rgba(200, 206, 218, 0.28) 0 1px, transparent 1.4px) 0 0 / 340px 300px,
+    linear-gradient(180deg, #0B0F2F 0%, #0A0D22 46%, #050814 100%);
   color: var(--white);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -45,9 +47,13 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(100deg, transparent 0 18%, rgba(108, 75, 255, 0.08) 18.2% 18.6%, transparent 18.8% 100%),
-    linear-gradient(72deg, transparent 0 69%, rgba(45, 140, 255, 0.09) 69.1% 69.4%, transparent 69.6% 100%);
-  opacity: 0.75;
+    radial-gradient(circle at 12% 16%, rgba(246, 248, 255, 0.34) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 31% 37%, rgba(245, 200, 76, 0.24) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 58% 24%, rgba(200, 206, 218, 0.28) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 84% 18%, rgba(246, 248, 255, 0.25) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 18% 72%, rgba(200, 206, 218, 0.22) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 72% 78%, rgba(245, 200, 76, 0.2) 0 1px, transparent 1.6px);
+  opacity: 0.9;
   z-index: -2;
 }
 
@@ -590,13 +596,6 @@ h3 {
   background: linear-gradient(90deg, rgba(45, 140, 255, 0.1), rgba(108, 75, 255, 0.1));
 }
 
-.roadmap-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
-}
-
 .split-layout,
 .contact-grid,
 .final-cta__inner {
@@ -770,7 +769,7 @@ h3 {
 
 .roadmap {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   list-style: none;
   padding: 0;
@@ -796,12 +795,12 @@ h3 {
   color: var(--silver);
 }
 
-.roadmap-float-gallery {
+.follow-float-gallery {
   position: relative;
-  min-height: 540px;
+  min-height: 360px;
 }
 
-.roadmap-float-gallery span {
+.follow-float-gallery span {
   position: absolute;
   overflow: hidden;
   border: 1px solid rgba(200, 206, 218, 0.2);
@@ -811,31 +810,31 @@ h3 {
   animation: galleryDrift 18s ease-in-out infinite;
 }
 
-.roadmap-float-gallery span:nth-child(1) {
-  inset: 0 8% 42% 0;
+.follow-float-gallery span:nth-child(1) {
+  inset: 0 8% 38% 0;
 }
 
-.roadmap-float-gallery span:nth-child(2) {
-  inset: 30% 0 18% 22%;
+.follow-float-gallery span:nth-child(2) {
+  inset: 30% 0 16% 24%;
   animation-delay: -6s;
 }
 
-.roadmap-float-gallery span:nth-child(3) {
+.follow-float-gallery span:nth-child(3) {
   inset: 58% 38% 0 4%;
   animation-delay: -12s;
 }
 
-.roadmap-float-gallery img {
+.follow-float-gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.roadmap-float-gallery span:nth-child(2) img {
+.follow-float-gallery span:nth-child(2) img {
   object-position: 66% center;
 }
 
-.roadmap-float-gallery span:nth-child(3) img {
+.follow-float-gallery span:nth-child(3) img {
   object-position: 78% center;
   filter: saturate(0.78) contrast(1.08);
 }
@@ -948,6 +947,11 @@ h3 {
 
 .final-cta {
   background: linear-gradient(90deg, rgba(108, 75, 255, 0.16), rgba(245, 200, 76, 0.08));
+}
+
+.final-cta__inner {
+  grid-template-columns: minmax(0, 0.8fr) minmax(240px, 0.42fr) minmax(300px, 0.78fr);
+  align-items: center;
 }
 
 .site-footer {
@@ -1120,8 +1124,7 @@ h3 {
   .split-layout,
   .contact-grid,
   .final-cta__inner,
-  .policy-layout,
-  .roadmap-layout {
+  .policy-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1134,7 +1137,7 @@ h3 {
     position: static;
   }
 
-  .roadmap-float-gallery {
+  .follow-float-gallery {
     min-height: 420px;
   }
 }
@@ -1159,19 +1162,19 @@ h3 {
     height: 300px;
   }
 
-  .roadmap-float-gallery {
+  .follow-float-gallery {
     min-height: 360px;
   }
 
-  .roadmap-float-gallery span:nth-child(1) {
+  .follow-float-gallery span:nth-child(1) {
     inset: 0 8% 46% 0;
   }
 
-  .roadmap-float-gallery span:nth-child(2) {
+  .follow-float-gallery span:nth-child(2) {
     inset: 28% 0 20% 18%;
   }
 
-  .roadmap-float-gallery span:nth-child(3) {
+  .follow-float-gallery span:nth-child(3) {
     inset: 60% 32% 0 2%;
   }
 
@@ -1257,7 +1260,7 @@ h3 {
     animation: none !important;
   }
 
-  .roadmap-float-gallery span {
+  .follow-float-gallery span {
     animation: none !important;
   }
 }
