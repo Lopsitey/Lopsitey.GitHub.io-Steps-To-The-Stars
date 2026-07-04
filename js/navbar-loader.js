@@ -26,7 +26,7 @@
 
     const page = document.body.dataset.page;
     scope.querySelectorAll("[data-page-target]").forEach((link) => {
-      if (link.dataset.pageTarget === page) {
+      if (link.dataset.pageTarget === page && page !== "home") {
         link.setAttribute("aria-current", "page");
       }
     });

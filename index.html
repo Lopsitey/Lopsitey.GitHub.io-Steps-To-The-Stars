@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Steps to the Stars | Official Game Website</title>
-  <meta name="description" content="Official website for Steps to the Stars, an indie game from Celestial Studios Interactive Ltd.">
+  <meta name="description" content="A single player puzzle game following the journey of two stars as they climb to return to the constellation from which they have fallen.">
   <meta name="theme-color" content="#070B1A">
   <link rel="canonical" href="https://steps-to-the-stars.co.uk/">
   <meta property="og:title" content="Steps to the Stars">
-  <meta property="og:description" content="An indie game being expanded from a positively received student prototype into a commercial release.">
+  <meta property="og:description" content="A single player puzzle game following the journey of two stars as they climb to return to the constellation from which they have fallen.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://steps-to-the-stars.co.uk/">
   <meta property="og:image" content="https://steps-to-the-stars.co.uk/media/hero-steps-to-the-stars.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preload" as="image" href="media/hero-steps-to-the-stars.png">
   <link rel="stylesheet" href="css/site.css">
   <script type="application/ld+json">
@@ -22,6 +24,7 @@
     "name": "Steps to the Stars",
     "url": "https://steps-to-the-stars.co.uk/",
     "image": "https://steps-to-the-stars.co.uk/media/hero-steps-to-the-stars.png",
+    "description": "A single player puzzle game following the journey of two stars as they climb to return to the constellation from which they have fallen.",
     "author": {
       "@type": "Organization",
       "name": "Celestial Studios Interactive Ltd",
@@ -31,7 +34,8 @@
       "@type": "Organization",
       "name": "Celestial Studios Interactive Ltd"
     },
-    "applicationCategory": "Game"
+    "applicationCategory": "Game",
+    "genre": ["Puzzle", "Adventure"]
   }
   </script>
 </head>
@@ -40,182 +44,143 @@
   <div data-component="navbar"></div>
 
   <main id="main">
-    <section class="hero" id="game" aria-labelledby="hero-title">
-      <img class="hero__image" src="media/hero-steps-to-the-stars.png" alt="A luminous path of star platforms rising through deep space toward a distant constellation gate.">
+    <section class="hero" id="game" aria-labelledby="hero-title" data-spy-section="Game">
+      <video class="hero__video" autoplay muted loop playsinline poster="media/hero-steps-to-the-stars.png" aria-hidden="true">
+        <!-- TODO: Add the source MP4 to media/steps-to-the-stars-hero.mp4, then convert to WebM with ffmpeg. -->
+        <source src="media/steps-to-the-stars-hero.webm" type="video/webm">
+        <source src="media/steps-to-the-stars-hero.mp4" type="video/mp4">
+      </video>
+      <img class="hero__fallback" src="media/hero-steps-to-the-stars.png" alt="">
       <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero-gallery" aria-hidden="true">
+        <span><img src="media/hero-steps-to-the-stars.png" alt=""></span>
+        <span><img src="media/hero-steps-to-the-stars.png" alt=""></span>
+        <span><img src="media/hero-steps-to-the-stars.png" alt=""></span>
+      </div>
       <div class="hero__content">
         <p class="eyebrow">Celestial Studios Interactive Ltd presents</p>
         <h1 id="hero-title">Steps to the Stars</h1>
-        <!-- TODO: Replace this editable tagline with final approved marketing copy. -->
-        <p class="hero__tagline">Climb beyond the night. Follow the light. Find what waits above.</p>
+        <p class="hero__tagline">A single player puzzle game following the journey of two stars as they climb to return to the constellation from which they have fallen.</p>
         <div class="action-row" aria-label="Game platform actions">
           <!-- TODO: Replace with the final Steam store page URL. -->
           <a class="button button--primary" href="https://store.steampowered.com/" rel="noopener">Wishlist on Steam</a>
-          <!-- TODO: Replace with the final Itch.io prototype URL. -->
-          <a class="button button--secondary" href="https://itch.io/" rel="noopener">Play the Prototype on Itch.io</a>
+          <a class="button button--secondary" href="https://zacincz.itch.io/steps-to-the-stars" rel="noopener">Play the Prototype on Itch.io</a>
         </div>
+        <p class="hero__description">Little star has lost his shine, relying on big star to guide them safely through the shadows. Using her strength together they push blocks, press buttons and clear paths journeying through hand-crafted puzzles together, in the hopes of returning to the heavens.</p>
         <p class="status-pill">Coming soon - PC first, future platforms under review</p>
       </div>
     </section>
 
-    <section class="section section--intro" aria-labelledby="overview-title">
-      <div class="section-inner intro-grid">
-        <div>
-          <p class="section-kicker">Game overview</p>
-          <h2 id="overview-title">A student prototype growing into a commercial indie release.</h2>
-        </div>
-        <div class="intro-copy">
-          <p>Steps to the Stars is an indie game being expanded from a positively received student prototype into a full commercial release by Celestial Studios Interactive Ltd.</p>
-          <p>The site is ready for final gameplay details, trailer links and screenshots once the public store pages and press assets are approved.</p>
-          <!-- TODO: Add confirmed mechanics, release-window wording and platform availability after they are final. -->
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="features" aria-labelledby="features-title">
+    <section class="section section--media" id="features-media" aria-labelledby="features-media-title" data-spy-section="Features and Media">
       <div class="section-inner">
         <div class="section-heading">
-          <p class="section-kicker">Features</p>
-          <h2 id="features-title">Editable feature cards for the real build.</h2>
-          <p>These cards avoid inventing unconfirmed mechanics while giving the site a polished structure for the final pitch.</p>
+          <p class="section-kicker">Features and media</p>
+          <h2 id="features-media-title">Hand-crafted star puzzles, shown through the game world.</h2>
+          <p>Big star and little star move together through shadowed spaces, using weight, timing and light to clear paths back toward the constellation.</p>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card feature-card--wide">
-            <span class="card-index">01</span>
-            <h3>Exploration and gameplay</h3>
-            <p><!-- TODO: Replace with confirmed gameplay description. -->Describe the core movement, challenge loop and player goals here once the commercial design is locked.</p>
-          </article>
-          <article class="feature-card">
-            <span class="card-index">02</span>
-            <h3>Visual style</h3>
-            <p><!-- TODO: Replace with final art-direction wording. -->Use this space for the game's approved celestial, sci-fi or fantasy art direction.</p>
-          </article>
-          <article class="feature-card">
-            <span class="card-index">03</span>
-            <h3>Narrative and world</h3>
-            <p><!-- TODO: Replace with confirmed story summary. -->Add a spoiler-light description of the setting, themes and player journey.</p>
-          </article>
-          <article class="feature-card">
-            <span class="card-index">04</span>
-            <h3>Progression and mechanics</h3>
-            <p><!-- TODO: Replace with final systems copy. -->Summarise progression, unlocks or challenge structure only after those systems are confirmed.</p>
-          </article>
-          <article class="feature-card feature-card--accent">
-            <span class="card-index">05</span>
-            <h3>Accessibility and platforms</h3>
-            <p><!-- TODO: Replace with tested accessibility and platform support. -->Document accessibility options, controller support and platform status after validation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section--media" id="media" aria-labelledby="media-title">
-      <div class="section-inner media-grid">
-        <div class="section-heading">
-          <p class="section-kicker">Media</p>
-          <h2 id="media-title">Screenshots and trailer space.</h2>
-          <p>Drop final gameplay images into the gallery and replace the trailer placeholder when the public video is ready.</p>
-        </div>
-        <div class="trailer-frame" aria-label="Trailer placeholder">
-          <!-- TODO: Replace this placeholder with the final trailer embed. -->
-          <div class="play-mark" aria-hidden="true"></div>
-          <p>Final trailer embed coming soon</p>
-        </div>
-        <div class="gallery" aria-label="Screenshot gallery">
-          <button class="gallery-item" type="button" data-full="media/hero-steps-to-the-stars.png" data-caption="TODO: Replace with confirmed gameplay screenshot.">
-            <img src="media/hero-steps-to-the-stars.png" alt="TODO: Replace with gameplay screenshot showing exploration.">
-            <span>Exploration placeholder</span>
+        <div class="showcase-grid">
+          <button class="showcase-card showcase-card--large gallery-item" type="button" data-full="media/hero-steps-to-the-stars.png" data-caption="Two stars climbing through a luminous celestial path.">
+            <img src="media/hero-steps-to-the-stars.png" alt="Two stars climbing through a luminous celestial path.">
+            <span class="showcase-card__label">Puzzle Journey</span>
+            <strong>Guide two fallen stars through connected challenges.</strong>
           </button>
-          <button class="gallery-item gallery-item--shift" type="button" data-full="media/hero-steps-to-the-stars.png" data-caption="TODO: Replace with confirmed level or challenge screenshot.">
-            <img src="media/hero-steps-to-the-stars.png" alt="TODO: Replace with gameplay screenshot showing a challenge or level.">
-            <span>Challenge placeholder</span>
+          <button class="showcase-card gallery-item" type="button" data-full="media/hero-steps-to-the-stars.png" data-caption="Hand-crafted puzzle spaces built around blocks, buttons and paths.">
+            <img src="media/hero-steps-to-the-stars.png" alt="A celestial puzzle space with platforms and glowing paths.">
+            <span class="showcase-card__label">Hand-crafted puzzles</span>
+            <strong>Push blocks, press buttons and clear the way forward.</strong>
           </button>
-          <button class="gallery-item gallery-item--silver" type="button" data-full="media/hero-steps-to-the-stars.png" data-caption="TODO: Replace with confirmed world or story screenshot.">
-            <img src="media/hero-steps-to-the-stars.png" alt="TODO: Replace with gameplay screenshot showing world or story detail.">
-            <span>World placeholder</span>
+          <button class="showcase-card showcase-card--silver gallery-item" type="button" data-full="media/hero-steps-to-the-stars.png" data-caption="A quiet story of light, shadow and returning home.">
+            <img src="media/hero-steps-to-the-stars.png" alt="A silver-blue path leading toward a distant constellation.">
+            <span class="showcase-card__label">Light and shadow</span>
+            <strong>Keep little star safe while the darkness closes in.</strong>
           </button>
         </div>
       </div>
     </section>
 
-    <section class="section" id="story" aria-labelledby="story-title">
+    <section class="section section--news" id="news" aria-labelledby="news-title" data-spy-section="News">
       <div class="section-inner">
         <div class="section-heading">
-          <p class="section-kicker">About the project</p>
-          <h2 id="story-title">A constellation-shaped development path.</h2>
+          <p class="section-kicker">News</p>
+          <h2 id="news-title">Development updates and player-facing posts.</h2>
+          <p>Short update cards link out to the places where players already follow prototypes, videos and devlogs.</p>
         </div>
-        <ol class="timeline" aria-label="Project timeline">
+        <div class="news-grid">
+          <article class="news-card news-card--featured">
+            <a href="https://zacincz.itch.io/steps-to-the-stars" rel="noopener">
+              <img src="media/hero-steps-to-the-stars.png" alt="Steps to the Stars artwork.">
+              <span class="news-card__meta">Itch.io Prototype</span>
+              <time datetime="2026-07-04">4 Jul 2026</time>
+              <h3>Play the original prototype</h3>
+              <p>Try the early Itch.io version and follow the project as it grows from student prototype into a fuller commercial release.</p>
+            </a>
+          </article>
+          <article class="news-card">
+            <!-- TODO: Replace with the final YouTube devlog or channel URL. -->
+            <a href="https://www.youtube.com/results?search_query=Steps+to+the+Stars+devlog" rel="noopener">
+              <img src="media/hero-steps-to-the-stars.png" alt="A star path used as a placeholder for a YouTube development update.">
+              <span class="news-card__meta">YouTube Devlog</span>
+              <time datetime="2026-07-04">4 Jul 2026</time>
+              <h3>Video updates coming next</h3>
+              <p>Use this slot for trailer breakdowns, puzzle-design posts and short development videos once the channel link is final.</p>
+            </a>
+          </article>
+          <article class="news-card">
+            <a href="studio/" rel="noopener">
+              <img src="media/hero-steps-to-the-stars.png" alt="Celestial artwork for a studio update.">
+              <span class="news-card__meta">Studio</span>
+              <time datetime="2026-07-04">4 Jul 2026</time>
+              <h3>Celestial Studios Interactive Ltd</h3>
+              <p>Read about the company behind the project, contact details and the current production focus for Steps to the Stars.</p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--roadmap" id="roadmap" aria-labelledby="roadmap-title" data-spy-section="Roadmap">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="section-kicker">Roadmap</p>
+          <h2 id="roadmap-title">From Itch.io prototype to wider platform plans.</h2>
+          <p>This roadmap is a public development direction, not a release-date promise. Dates and platforms should be updated once publishing, certification and store setup are confirmed.</p>
+        </div>
+        <ol class="roadmap">
           <li>
-            <span class="timeline-node" aria-hidden="true"></span>
-            <h3>Original student project</h3>
-            <p>The earliest version was created as a student project and became the foundation for the game's commercial direction.</p>
+            <span class="roadmap__step">01</span>
+            <h3>Prototype on Itch.io</h3>
+            <p>Keep the early version available as a reference point for feedback, playtesting and community interest.</p>
           </li>
           <li>
-            <span class="timeline-node" aria-hidden="true"></span>
-            <h3>Prototype release</h3>
-            <p>A public prototype gave players an early look at the idea and created a useful feedback loop.</p>
+            <span class="roadmap__step">02</span>
+            <h3>PC store preparation</h3>
+            <p>Prepare trailer assets, screenshots, Steam page copy, controller notes and the first commercial release plan.</p>
           </li>
           <li>
-            <span class="timeline-node" aria-hidden="true"></span>
-            <h3>Community feedback</h3>
-            <p>Feedback from the prototype is helping shape priorities for the expanded release.</p>
+            <span class="roadmap__step">03</span>
+            <h3>Mobile and platform requirements</h3>
+            <p>Review Google Play and Apple requirements, including privacy disclosures, store metadata, testing and platform services.</p>
           </li>
           <li>
-            <span class="timeline-node" aria-hidden="true"></span>
-            <h3>Commercial development</h3>
-            <p>Celestial Studios Interactive Ltd is developing the project into a more complete, sustainable indie game.</p>
-          </li>
-          <li>
-            <span class="timeline-node" aria-hidden="true"></span>
-            <h3>Steam release preparation</h3>
-            <p>Store assets, production planning, trailer material and platform details can be added here as they become final.</p>
-          </li>
-          <li>
-            <span class="timeline-node" aria-hidden="true"></span>
-            <h3>Future platform ambitions</h3>
-            <p>Mobile and console ambitions can be described once technical requirements and publishing plans are confirmed.</p>
+            <span class="roadmap__step">04</span>
+            <h3>Console ambition</h3>
+            <p>Explore the practical path toward console releases, including Xbox publishing steps, certification work and platform-specific QA.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section section--updates" aria-labelledby="updates-title">
-      <div class="section-inner">
-        <div class="section-heading">
-          <p class="section-kicker">News and status</p>
-          <h2 id="updates-title">Reusable update cards, no CMS required.</h2>
-        </div>
-        <div class="update-grid">
-          <article class="update-card">
-            <p class="update-date">Status</p>
-            <h3>Website foundation online</h3>
-            <p>The site now has a game landing page, studio information and a privacy-policy URL ready for platform setup.</p>
-          </article>
-          <article class="update-card">
-            <p class="update-date">TODO</p>
-            <h3>Steam page</h3>
-            <p>Add the real Steam link, capsule art and release status once the store page is live.</p>
-          </article>
-          <article class="update-card">
-            <p class="update-date">TODO</p>
-            <h3>Prototype link</h3>
-            <p>Add the real Itch.io prototype link and replace this copy with player-facing release notes.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section final-cta" aria-labelledby="cta-title">
+    <section class="section final-cta" id="follow" aria-labelledby="cta-title" data-spy-section="Follow">
       <div class="section-inner final-cta__inner">
         <div>
           <p class="section-kicker">Follow development</p>
-          <h2 id="cta-title">Take the next step when the store pages are ready.</h2>
+          <h2 id="cta-title">Follow the climb back to the heavens.</h2>
         </div>
         <div class="action-row">
           <!-- TODO: Replace with final Steam URL. -->
           <a class="button button--primary" href="https://store.steampowered.com/" rel="noopener">Wishlist on Steam</a>
-          <!-- TODO: Replace with final Itch.io URL. -->
-          <a class="button button--secondary" href="https://itch.io/" rel="noopener">Play the Prototype on Itch.io</a>
+          <a class="button button--secondary" href="https://zacincz.itch.io/steps-to-the-stars" rel="noopener">Play on Itch.io</a>
         </div>
       </div>
     </section>

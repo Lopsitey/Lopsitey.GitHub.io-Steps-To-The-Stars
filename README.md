@@ -4,6 +4,18 @@ Official website for Steps to the Stars and Celestial Studios Interactive Ltd - 
 
 Custom domain: https://steps-to-the-stars.co.uk/
 
+## Pages
+
+- `/` - game-first landing page for Steps to the Stars.
+- `/studio/` - company, project background and contact information.
+- `/privacy/` - stable privacy policy URL for platform dashboards such as Google Play Console and App Store Connect.
+
+## Editing Notes
+
+This is a static GitHub Pages site built with semantic HTML, custom CSS and vanilla JavaScript. Shared navigation and footer markup lives in `components/` and is loaded by `js/navbar-loader.js`.
+
+Several sections contain `TODO` comments where final store links, screenshots, video files, contact details and platform privacy details must be confirmed before public launch.
+
 
 ## Licence
 
