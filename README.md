@@ -1,12 +1,12 @@
-# Steps to the Stars Website
+# Steps To The Stars Website
 
-Official website for Steps to the Stars and Celestial Studios Interactive Ltd - game details, media, studio information, contact details and privacy policy.
+Official website for Steps To The Stars and Celestial Studios Interactive Ltd - game details, media, studio information, contact details and privacy policy.
 
 Custom domain: https://steps-to-the-stars.co.uk/
 
 ## Pages
 
-- `/` - game-first landing page for Steps to the Stars.
+- `/` - game-first landing page for Steps To The Stars.
 - `/studio/` - company, project background and contact information.
 - `/privacy/` - stable privacy policy URL for platform dashboards such as Google Play Console and App Store Connect.
 

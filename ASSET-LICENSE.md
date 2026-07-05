@@ -6,4 +6,4 @@ Game artwork, screenshots, video, music, audio, logos, trademarks and written co
 
 Those materials remain the property of Celestial Studios Interactive Ltd and/or their respective rights holders and may not be reused without permission.
 
-Generated placeholder artwork in this repository is provided only as temporary website artwork for this project and should be replaced with final approved Steps to the Stars media before public launch.
+Generated placeholder artwork in this repository is provided only as temporary website artwork for this project and should be replaced with final approved Steps To The Stars media before public launch.
