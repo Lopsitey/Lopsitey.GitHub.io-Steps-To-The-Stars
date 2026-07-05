@@ -156,10 +156,136 @@
     initHeroVideo();
     initLightbox();
     initReveal();
+        initGallery();
   });
 
   document.addEventListener("site:components-loaded", () => {
     initNavigation();
     initCurrentYear();
   });
+
+
+  function initGallery(){
+
+    const track=document.querySelector(".gallery-track");
+
+    if(!track) return;
+
+    const prev=document.querySelector(".gallery-arrow.left");
+    const next=document.querySelector(".gallery-arrow.right");
+
+    let images=[...track.children];
+
+    let autoScroll=null;
+    let started=false;
+    let busy=false;
+
+    function refresh(){
+
+        images=[...track.children];
+
+        images.forEach(img=>img.classList.remove("active"));
+
+        const middle=Math.floor(images.length/2);
+
+        images[middle].classList.add("active");
+
+        track.style.transform = "translateX(0)";
+
+    }
+
+    refresh();
+
+    function slideLeft(){
+
+        if(busy) return;
+
+        busy=true;
+
+        track.style.transform="translateX(-40vw)";
+
+        track.addEventListener("transitionend",function handler(){
+
+            track.removeEventListener("transitionend",handler);
+
+            track.append(track.firstElementChild);
+
+            track.style.transition="none";
+            track.style.transform="translateX(0px)";
+
+            requestAnimationFrame(()=>{
+
+                track.style.transition="transform .8s cubic-bezier(.22,.61,.36,1)";
+
+            });
+
+            refresh();
+
+            busy=false;
+
+        });
+
+    }
+
+    function slideRight(){
+
+        if(busy) return;
+
+        busy=true;
+
+        track.style.transition="none";
+
+        track.prepend(track.lastElementChild);
+
+        track.style.transform="translateX(-40vw)";
+
+        requestAnimationFrame(()=>{
+
+            track.style.transition="transform .8s cubic-bezier(.22,.61,.36,1)";
+
+            track.style.transform="translateX(0px)";
+
+        });
+
+        track.addEventListener("transitionend",function handler(){
+
+            track.removeEventListener("transitionend",handler);
+
+            refresh();
+
+            busy=false;
+
+        });
+
+    }
+
+    function beginAuto(){
+
+        if(started) return;
+
+        started=true;
+
+        autoScroll=setInterval(slideLeft,5000);
+
+    }
+
+    next.addEventListener("click",()=>{
+
+        slideLeft();
+
+        beginAuto();
+
+    });
+
+    prev.addEventListener("click",()=>{
+
+        slideRight();
+
+        beginAuto();
+
+    });
+
+}
+
+
 })();
