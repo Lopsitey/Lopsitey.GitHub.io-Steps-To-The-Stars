@@ -363,12 +363,13 @@ main,
 .hero__shade {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(7, 11, 26, 0.94) 0%, rgba(7, 11, 26, 0.72) 45%, rgba(7, 11, 26, 0.22) 100%),
-    linear-gradient(0deg, rgba(7, 11, 26, 0.84), transparent 52%);
+    linear-gradient(90deg, rgba(7, 11, 26, 0.78) 0%, rgba(7, 11, 26, 0.5) 45%, rgba(7, 11, 26, 0.12) 100%),
+    linear-gradient(0deg, rgba(7, 11, 26, 0.62), transparent 52%);
 }
 
 .wide-carousel {
   position: relative;
+  margin-top: clamp(1rem, 2.6vw, 2rem);
   height: clamp(260px, 48vw, 560px);
   overflow: hidden;
   border-bottom: 1px solid rgba(200, 206, 218, 0.14);
@@ -387,7 +388,7 @@ main,
 .wide-carousel__track span {
   opacity: 0;
   transform: scale(1.04);
-  animation: galleryRotate 24s ease-in-out infinite;
+  animation: galleryRotate 24s linear infinite;
 }
 
 .wide-carousel__track span:nth-child(1) {
@@ -437,18 +438,13 @@ main,
 }
 
 @keyframes galleryRotate {
-  0% {
-    opacity: 0;
-    transform: scale(1.04);
-  }
-
-  8%,
-  25% {
+  0%,
+  24.99% {
     opacity: 0.82;
     transform: scale(1);
   }
 
-  33%,
+  25%,
   100% {
     opacity: 0;
     transform: scale(1.04);
@@ -626,8 +622,8 @@ h3 {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-  grid-auto-rows: minmax(250px, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(290px, 1fr);
   gap: 1rem;
 }
 
@@ -656,7 +652,7 @@ h3 {
 }
 
 .showcase-card--large {
-  grid-row: span 2;
+  grid-row: auto;
 }
 
 .showcase-card img {
@@ -711,10 +707,21 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  position: relative;
+  padding-top: 1.25rem;
+}
+
+.news-grid::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(200, 206, 218, 0.26);
 }
 
 .news-card {
-  min-height: 380px;
+  min-height: 340px;
   overflow: hidden;
   transform: translateY(16px);
   opacity: 0;
@@ -722,7 +729,7 @@ h3 {
 }
 
 .news-card--featured {
-  grid-column: span 2;
+  grid-column: auto;
 }
 
 .news-card a {
@@ -785,6 +792,18 @@ h3 {
   transform: translateY(16px);
   opacity: 0;
   transition: transform 420ms ease, opacity 420ms ease;
+}
+
+.roadmap li:nth-child(2) {
+  animation-delay: -4.5s;
+}
+
+.roadmap li:nth-child(3) {
+  animation-delay: -9s;
+}
+
+.roadmap li:nth-child(4) {
+  animation-delay: -13.5s;
 }
 
 .roadmap__step {
@@ -856,8 +875,17 @@ h3 {
 .showcase-card.is-visible,
 .news-card.is-visible,
 .roadmap li.is-visible {
-  transform: translateY(0);
   opacity: 1;
+}
+
+.showcase-card.is-visible,
+.news-card.is-visible {
+  transform: translateY(0);
+}
+
+.roadmap li.is-visible {
+  transform: translate3d(0, 0, 0);
+  animation: galleryDrift 18s ease-in-out infinite;
 }
 
 .contact-panel,
@@ -948,13 +976,33 @@ h3 {
   color: var(--gold);
 }
 
-.final-cta {
+.section--back-to-top {
   background: linear-gradient(90deg, rgba(108, 75, 255, 0.16), rgba(245, 200, 76, 0.08));
 }
 
-.final-cta__inner {
-  grid-template-columns: minmax(0, 0.8fr) minmax(240px, 0.42fr) minmax(300px, 0.78fr);
+.back-to-top__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.back-to-top-link {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(200, 206, 218, 0.28);
+  border-radius: 999px;
+  color: var(--silver);
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: border-color 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.back-to-top-link:hover {
+  border-color: rgba(245, 200, 76, 0.54);
+  color: var(--gold);
+  transform: translateY(-2px);
 }
 
 .site-footer {
@@ -1163,8 +1211,8 @@ h3 {
 
   .hero__shade {
     background:
-      linear-gradient(90deg, rgba(7, 11, 26, 0.94), rgba(7, 11, 26, 0.72)),
-      linear-gradient(0deg, rgba(7, 11, 26, 0.72), transparent 50%);
+      linear-gradient(90deg, rgba(7, 11, 26, 0.82), rgba(7, 11, 26, 0.52)),
+      linear-gradient(0deg, rgba(7, 11, 26, 0.62), transparent 50%);
   }
 
   .wide-carousel {
@@ -1205,10 +1253,15 @@ h3 {
   }
 
   .showcase-grid,
-  .news-grid,
   .roadmap,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
   }
 
   .showcase-card--large,
