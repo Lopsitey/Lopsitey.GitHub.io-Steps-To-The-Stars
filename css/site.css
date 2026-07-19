@@ -672,7 +672,8 @@ h3 {
 }
 
 .showcase-card::after,
-.news-card a::after {
+.news-card > a::after,
+.news-card__content::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -725,11 +726,13 @@ h3 {
   grid-column: span 2;
 }
 
-.news-card a {
+.news-card > a,
+.news-card__content {
   position: relative;
   min-height: inherit;
   display: grid;
   align-content: end;
+  gap: 0.35rem;
   padding: 1.15rem;
   color: var(--white);
   text-decoration: none;
@@ -764,6 +767,21 @@ h3 {
 .news-card p {
   max-width: 620px;
   color: var(--silver);
+}
+
+.news-card__actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.news-card__actions .button {
+  min-height: 42px;
+  padding: 0.6rem 0.95rem;
+  box-shadow: none;
 }
 
 .news-card:hover {
@@ -1218,7 +1236,8 @@ h3 {
   }
 
   .news-card,
-  .news-card a {
+  .news-card > a,
+  .news-card__content {
     min-height: 330px;
   }
 
